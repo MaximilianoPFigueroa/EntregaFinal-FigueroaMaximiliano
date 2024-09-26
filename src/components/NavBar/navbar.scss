@@ -1,0 +1,15 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+
+    .categorias{
+        display: flex;
+        list-style: none;
+        .lista{
+            padding: 10px;
+        }
+    }
+    .cartwidget{
+        display: flex;
+    }
+}
