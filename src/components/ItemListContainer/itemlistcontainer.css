@@ -1,0 +1,16 @@
+.itemlistcontainer{
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.itemlistcontainer .item{
+    border: 2px solid yellow;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
