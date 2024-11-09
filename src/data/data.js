@@ -4,7 +4,8 @@ const products = [
         name:"Campera amarilla",
         price: 94.99,
         image: "/img/campera-adidas-amarilla.jpg",
-        category:"campera",
+        category:"camperas",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore", 
         stock: 1,
     },
     {
@@ -12,15 +13,17 @@ const products = [
         name:"Campera negra",
         price: 124.99,
         image:"/img/campera-adidas-negra.jpg",
-        category:"campera",
+        category:"camperas",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore",
         stock:1,
     },
     {
         id: 3,
         name:"Campera azul",
         price: 94.99,
-        image:"/img/campera-adidas-azul.jpg",
-        category:"campera",
+        image:"/img/campera-adidas-argentina-posando.jpg",
+        category:"camperas",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore",
         stock:1,
     },
     {
@@ -28,7 +31,8 @@ const products = [
         name:"Gorra bordó",
         price: 74.99,
         image:"/img/gorra-adidas-bordo.jpg",
-        category:"gorra",
+        category:"gorras",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore",
         stock:1,
     },
     {
@@ -36,7 +40,8 @@ const products = [
         name:"Gorra celeste",
         price: 74.99,
         image:"/img/gorra-adidas-celeste.jpg",
-        category:"gorra",
+        category:"gorras",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore",
         stock:1,
     },
     {
@@ -44,7 +49,8 @@ const products = [
         name:"Gorra gris",
         price: 74.99,
         image:"/img/gorra-adidas-gris.jpg",
-        category:"gorra",
+        category:"gorras",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore",
         stock:1,
     },
     {
@@ -52,7 +58,8 @@ const products = [
         name:"Zapatilla azul",
         price: 149.99,
         image:"/img/zapatilla-adidas-azul.jpg",
-        category:"zapatilla",
+        category:"zapatillas",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore",
         stock:1,
     },
     {
@@ -60,7 +67,8 @@ const products = [
         name:"Zapatilla blanca",
         price: 149.99,
         image:"/img/zapatilla-adidas-blanca.jpg",
-        category:"zapatilla",
+        category:"zapatillas",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore",
         stock:1,
     },
     {
@@ -68,7 +76,8 @@ const products = [
         name:"Gorra verde",
         price: 149.99,
         image:"/img/zapatilla-adidas-verde.jpg",
-        category:"zapatilla",
+        category:"zapatillas",
+        description:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa sequi reprehenderit placeat voluptas quasi asperiores dolore",
         stock:1,
     }
 
@@ -80,4 +89,12 @@ const getProducts  = () => {
         }, 2000)
     })
 }
-export { getProducts }
+const getProduct = (idProduct) =>{
+    return new Promise ((resolve) => {
+        setTimeout(() => {
+            const product = products.find((product) => product.id === parseInt(idProduct) )
+            resolve(product)
+        }, 2000)
+    })
+}
+export { getProducts, getProduct }

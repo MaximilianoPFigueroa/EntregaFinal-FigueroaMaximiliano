@@ -1,34 +1,18 @@
-import { getProducts } from "../../data/data.js"
-import { useState, useEffect } from "react"
 import ItemList from "./ItemList.jsx"
-import Item from "./Item.jsx"
 import "./itemlistcontainer.css"
+import useProducts from "../../hooks/useProducts.jsx"
+import Loading from "../Loading/Loading.jsx"
+import hocFilterProducts from "../../hoc/hocFilterProducts.jsx"
+import { useParams } from "react-router-dom"
 
-
-const ItemListContainer = ({ greeting }) => {
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        getProducts()
-            .then((data) => {
-                setProducts(data)
-            })
-            .catch((error) => {
-                console.error(error)
-            })
-            .finally(() => {
-                console.log(" Finalizo la promesa")
-            })
-    }, [])
-
-
-
+const ItemListContainer = ({ products }) => {
 
     return (
         <div className="itemlistcontainer">
-            <h1>{greeting}</h1>
-            <ItemList  products={products}/>
+
+        <ItemList products={products}/>
         </div>
     )
 }
-export default ItemListContainer
+const ItemListContainerWithHoc = hocFilterProducts(ItemListContainer)
+export default ItemListContainerWithHoc

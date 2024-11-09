@@ -1,22 +1,23 @@
 import CartWidget from "./CartWidget"
 import logo from "../../assets/logo.jpg"
 import "./navbar.scss"
+import { Link } from "react-router-dom"
 
-const NavBar =() =>{
+const NavBar = () => {
     return (
         <nav className="navbar">
-            <div className="brand">
-                <img src={logo} alt="" width={100}/>
-            </div>
+            <Link to="/"className="brand">
+                <img src={logo} alt="" width={100} />
+            </Link>
             <ul className="categorias">
                 <li className="lista">
-                    Camperas
+                    <Link to="/category/camperas"> Camperas</Link>
                 </li>
                 <li className="lista">
-                    Gorras
+                    <Link to="/category/gorras"> Gorras</Link>
                 </li>
                 <li className="lista">
-                    Zapatillas
+                    <Link to="/category/zapatillas"> Zapatillas</Link>
                 </li>
             </ul>
             <CartWidget />
