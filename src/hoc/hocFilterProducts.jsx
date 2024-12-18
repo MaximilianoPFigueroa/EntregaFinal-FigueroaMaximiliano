@@ -1,6 +1,7 @@
 import useProducts from "../hooks/useProducts"
 import { useState } from "react"
 
+
 const hocFilterProducts = (Component) => {
 
 
@@ -32,8 +33,8 @@ const hocFilterProducts = (Component) => {
 
         return (
             <>
-                <div>
-                    <input type="text" placeholder="buscar..." onChange={changeInput} />
+                <div className="filtros">
+                    <input type="text" placeholder="buscar..." onChange={changeInput} className="buscador"/>
                     <button onClick={() => setTypeOrder("minor")}>
                         Menor precio
                     </button>

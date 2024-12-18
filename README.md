@@ -1,8 +1,7 @@
-# React + Vite
+# Figmax - tienda de ropa urbana para hombres
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## En este proyecto busco implementar un sitio web en donde los usuarios de sexo masculino puedan elegir libremente un estilo de ropa en los cuales se sientan representados, tanto en la comodidad de su uso como también en demostrar su capacidad combinar buenas prendas.
 
-Currently, two official plugins are available:
+## Dependencias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`firebase` `react-router-dom` `react-icons`

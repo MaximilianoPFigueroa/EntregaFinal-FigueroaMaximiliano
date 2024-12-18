@@ -1,5 +1,3 @@
-import "./loading.css"
-
 const Loading = () => {
   return (
     <div>Loading...</div>
@@ -7,4 +5,3 @@ const Loading = () => {
 }
 
 export default Loading
-//pagina para ver los sppiners esta en el video de hooks

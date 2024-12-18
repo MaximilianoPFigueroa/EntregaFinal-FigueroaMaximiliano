@@ -1,4 +1,9 @@
-/*const products = [
+import db from "../db/db.js"
+import { addDoc, collection } from "firebase/firestore"
+
+
+
+const products = [
     {
         id: 1,
         name:"Campera amarilla",
@@ -82,19 +87,12 @@
     }
 
 ]
-const getProducts  = () => {
-    return new Promise((resolve, reject)=> {
-        setTimeout(() =>{
-            resolve(products)
-        }, 2000)
+const seedProducts = () => {
+    const productsRef = collection(db,"productos")
+    products.map(({id, ...dataProduct}) =>{
+    addDoc(productsRef,dataProduct)
     })
-}
-const getProduct = (idProduct) =>{
-    return new Promise ((resolve) => {
-        setTimeout(() => {
-            const product = products.find((product) => product.id === parseInt(idProduct) )
-            resolve(product)
-        }, 2000)
-    })
-}
-export { getProducts, getProduct }*/
+    console.log("productos subidos")
+    return
+} 
+seedProducts()

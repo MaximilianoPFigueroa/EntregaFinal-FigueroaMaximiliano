@@ -1,6 +1,7 @@
 .navbar{
     display: flex;
     justify-content: space-between;
+    
 
     .categorias{
         display: flex;
@@ -11,5 +12,6 @@
     }
     .cartwidget{
         display: flex;
+        align-items: center;
     }
 }
