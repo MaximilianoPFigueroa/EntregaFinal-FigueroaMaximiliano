@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react"
-//import { getProduct } from "../../data/data.js"
 import ItemDetail from "./ItemDetail.jsx"
 import { useParams } from "react-router-dom"
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext.jsx"
-import {doc, getDoc} from "firebase/firestore"
+import { doc, getDoc } from "firebase/firestore"
 import db from "../../db/db.js"
 
 const ItemDetailContainer = () => {
@@ -21,14 +20,14 @@ const ItemDetailContainer = () => {
     setHideItemCount(true)
   }
 
-  const getProduct = () =>{
+  const getProduct = () => {
     const docRef = doc(db, "productos", idProduct)
     getDoc(docRef)
-      .then((dataDb) =>{
-        const productDb = { id: dataDb.id, ...dataDb.data()}
+      .then((dataDb) => {
+        const productDb = { id: dataDb.id, ...dataDb.data() }
         setProduct(productDb)
       })
-      .finally(() =>{
+      .finally(() => {
         setLoading(false)
       })
   }
@@ -36,10 +35,6 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true)
     getProduct()
-
-    /*getProduct()
-      .then((data)=> setProduct(data))//data seria product del resolve de data.js
-      .finally(() => setLoading(false))*/
   }, [idProduct])
 
   return (

@@ -14,7 +14,7 @@ const Checkout = () => {
         fullname: "",
         phone: "",
         email: "",
-        repeatEmail:""
+        repeatEmail: ""
     })
 
     const [orderId, setOrderId] = useState(null)
@@ -27,14 +27,14 @@ const Checkout = () => {
     const handleSubmitForm = (event) => {
         event.preventDefault()
         const order = {
-            buyer: {...dataForm},
+            buyer: { ...dataForm },
             products: [...cart],
             date: Timestamp.fromDate(new Date()),
             total: totalPrice()
         }
-        if(dataForm.email === dataForm.repeatEmail){
+        if (dataForm.email === dataForm.repeatEmail) {
             uploadOrder(order)
-        } else{
+        } else {
             toast.error("Los emails deben coincidir")
         }
     }
@@ -44,7 +44,7 @@ const Checkout = () => {
             .then((response) => {
                 setOrderId(response.id)
             })
-            .finally(()=>{
+            .finally(() => {
                 toast.success("Felicitaciones, ha realizado una gran compra, muchas gracias!")
                 deleteCart()
             })

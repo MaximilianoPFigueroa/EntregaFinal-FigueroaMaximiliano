@@ -34,7 +34,7 @@ const hocFilterProducts = (Component) => {
         return (
             <>
                 <div className="filtros">
-                    <input type="text" placeholder="buscar..." onChange={changeInput} className="buscador"/>
+                    <input type="text" placeholder="buscar..." onChange={changeInput} className="buscador" />
                     <button onClick={() => setTypeOrder("minor")}>
                         Menor precio
                     </button>

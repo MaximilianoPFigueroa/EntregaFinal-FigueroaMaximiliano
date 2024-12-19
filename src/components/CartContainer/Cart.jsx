@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 
 const Cart = () => {
     const { cart, totalPrice, deleteProductInCar, deleteCart } = useContext(CartContext)
-    //Early return , retorno temprano
     if (cart.length === 0) {
         return (
             <div>

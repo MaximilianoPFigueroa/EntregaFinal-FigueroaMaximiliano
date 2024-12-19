@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-//import {getProducts} from "../data/data.js"
 import { useParams } from "react-router-dom"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import db from "../db/db.js"
@@ -18,7 +17,7 @@ const useProducts = () => {
                 })
                 setProducts(productsDb)
             })
-            .catch((error)=> {
+            .catch((error) => {
                 console.error(error)
             })
             .finally(() => {
@@ -45,24 +44,7 @@ const useProducts = () => {
         } else {
             getProducts()
         }
-        /*        setLoading(true)
-                getProducts()
-                .then((data) => {
-                    if(idCategory){
-                        const filterProducts = data.filter((product) => product.category === idCategory)
-                        setProducts(filterProducts)
-                    }else{
-                        setProducts(data)
-                    }
-                })
-                .catch((error)=> {
-                    console.error(error)
-                })
-                .finally(() => {
-                    //setLoading(false)
-                    console.log("Finalizo la promesa")
-                })*/
     }, [idCategory])
-    return { products}//, loading 
+    return { products }
 }
 export default useProducts

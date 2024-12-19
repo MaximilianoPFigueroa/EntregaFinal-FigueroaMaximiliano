@@ -3,7 +3,7 @@ import { useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 
 
-const ItemDetail = ({ product, addProduct, hideItemCount}) => {
+const ItemDetail = ({ product, addProduct, hideItemCount }) => {
   const [currentImage, setCurrentImage] = useState(product.image[0])
   const images = product.image.filter((image) => image !== currentImage)
 
@@ -13,7 +13,7 @@ const ItemDetail = ({ product, addProduct, hideItemCount}) => {
       <div>
         {
           images.map((image) => (
-            <img src={image} key={image} onClick={()=> setCurrentImage(image)} />
+            <img src={image} key={image} onClick={() => setCurrentImage(image)} />
           ))
         }
       </div>
@@ -27,10 +27,10 @@ const ItemDetail = ({ product, addProduct, hideItemCount}) => {
         hideItemCount === true ? (
           <Link to="/cart">Ver carrito</Link>
         ) : (
-          <ItemCount stock ={product.stock} addProduct={addProduct}/>
+          <ItemCount stock={product.stock} addProduct={addProduct} />
         )
       }
-      
+
     </div>
   )
 }
